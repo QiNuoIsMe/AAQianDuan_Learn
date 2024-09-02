@@ -1,0 +1,42 @@
+h2{
+    font-weight:400;
+    text-align:center;
+}
+
+p{
+    text-indent:2em;
+}
+
+body{
+    font: 16px/28px 'Microsoft Yahei';
+}
+
+.gray{
+    color: #888888;
+    font-size: 12px; 
+    text-align: center;
+}
+
+a{
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.search{
+    color: #666666;/*每两位分别代表r g b 所以可以写成#666，如#ff00ff = #f0f*/
+    font-size: 12px;
+
+}
+
+.btn{
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.p1{
+    text-align: center;
+}
+.footer{
+    color: #888888;
+    font-size: 12px; 
+}

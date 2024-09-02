@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>input 表单元素</title>
+</head>
+<body>
+    <form action="" method = "get" name="test1">
+        <!--text文本框，用户可以输入任何文字-->
+        用户名：<input type="text" name="username" value="请输入用户名" maxlength="6"><br>
+        <!--password密码框，用户看不见输入的密码-->
+        密码：<input type="password" name="psw">
+        <!--radio单选按钮 实现多选一-->
+        <!--name为表单元素名字，这里的性别单选按钮必须要有相同的名字才能实现多选一-->
+        <!--单选按钮和复选框可以设置checked，当打开页面时，默认选中该按钮-->
+        <br>
+        性别：男<input type="radio" name="sex" value="男"> 
+        女<input type="radio" name="sex" value="女" checked="checked"> 
+        人妖<input type="radio" name="sex" value="人妖"> <br>
+        <!--checkbox复选框 实现多选-->
+        爱好：吃饭<input type="checkbox" name="hobby" value="吃饭"> 
+        睡觉<input type="checkbox" name="hobby" value="睡觉"> 
+        和黎深睡觉<input type="checkbox" name="hobby" value="和黎深睡觉"> 
+        黎深和我睡觉<input type="checkbox" name="hobby" value="黎深和我睡觉" checked="checked"> 
+        调戏黎深<input type="checkbox" name="hobby" value="调戏黎深"> 
+        黎深陪伴学习<input type="checkbox" name="hobby" value="黎深陪伴学习"> <br>
+
+        <!--点击提交按纽可以把 表单域form 里的表单元素 里的值 提交给后台服务器-->
+        <input type="submit" value="免费注册">
+        <!--重置按钮可以还原表单元素的初始的默认状态-->
+        <input type="reset" value="重新填写">
+        <!--普通按钮 后期结合js搭配使用-->
+        <input type="button" value="获取短信验证码"><br>
+        <!--文件域 使用场景：上传文件使用的-->
+        上传头像：<input type="file">
+        <!---->
+        
+    </form>
+
+</body>
+</html>
