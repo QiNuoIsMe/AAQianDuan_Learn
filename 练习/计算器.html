@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>现代计算器</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #74ebd5, #9face6);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .calculator {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            width: 320px;
+            text-align: center;
+        }
+
+        .display {
+            background-color: #222;
+            color: #fff;
+            font-size: 28px;
+            padding: 15px;
+            border-radius: 10px;
+            min-height: 50px;
+            overflow: hidden;
+            text-align: right;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        button {
+            padding: 15px;
+            font-size: 18px;
+            cursor: pointer;
+            border: none;
+            border-radius: 10px;
+            color: white;
+            transition: background-color 0.3s, transform 0.1s;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+        }
+
+        .operator {
+            background-color: #007bff;
+        }
+
+        .operator:hover {
+            background-color: #0056b3;
+        }
+
+        .clear {
+            background-color: #dc3545;
+        }
+
+        .clear:hover {
+            background-color: #c82333;
+        }
+
+        /* 针对数字按钮 */
+        button:not(.operator):not(.clear) {
+            background-color: #28a745;
+        }
+
+        button:not(.operator):not(.clear):hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="calculator">
+        <div class="display" id="display"></div>
+        <div class="buttons">
+            <button onclick="appendToDisplay('7')">7</button>
+            <button onclick="appendToDisplay('8')">8</button>
+            <button onclick="appendToDisplay('9')">9</button>
+            <button class="operator" onclick="appendToDisplay('/')">/</button>
+
+            <button onclick="appendToDisplay('4')">4</button>
+            <button onclick="appendToDisplay('5')">5</button>
+            <button onclick="appendToDisplay('6')">6</button>
+            <button class="operator" onclick="appendToDisplay('*')">*</button>
+
+            <button onclick="appendToDisplay('1')">1</button>
+            <button onclick="appendToDisplay('2')">2</button>
+            <button onclick="appendToDisplay('3')">3</button>
+            <button class="operator" onclick="appendToDisplay('-')">-</button>
+
+            <button class="clear" onclick="clearDisplay()">C</button>
+            <button onclick="appendToDisplay('0')">0</button>
+            <button class="operator" onclick="calculate()">=</button>
+            <button class="operator" onclick="appendToDisplay('+')">+</button>
+        </div>
+    </div>
+
+    <script>
+        function appendToDisplay(value) {
+            const display = document.getElementById('display');
+            display.textContent += value;
+        }
+
+        function clearDisplay() {
+            const display = document.getElementById('display');
+            display.textContent = '';
+        }
+
+        function calculate() {
+            const display = document.getElementById('display');
+            try {
+                const result = eval(display.textContent);
+                display.textContent = result;
+            } catch (error) {
+                display.textContent = "错误";
+            }
+        }  
+    </script>
+
+</body>
+
+</html>
